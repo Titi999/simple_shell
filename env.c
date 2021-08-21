@@ -14,6 +14,6 @@ int env_func(void)
 		write(STDOUT_FILENO, "\n", 1);
 		counter++;
 	}
-	return (0);
+	return (1);
 }
 

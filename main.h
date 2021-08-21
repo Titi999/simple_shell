@@ -13,7 +13,7 @@ extern char **environ;
 
 typedef struct builtin
 {
-	char *b_name;
+	char *b_cmd;
 	int (*b_func)();
 } builtin_struct;
 
