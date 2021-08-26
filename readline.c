@@ -15,6 +15,11 @@ char *read_line(void)
 		{
 			exit(EXIT_SUCCESS);  /*We received an EOF*/
 		}
+		else if (term)
+		{
+			_print("\n");
+			exit(70);
+		}
 		else
 		{
 			perror("lsh: getline\n");
