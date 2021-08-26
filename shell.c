@@ -5,11 +5,10 @@
 /**
  * main - main function of a program
  * @UNUSED: Macro for unused parameters
- * @env: environment
  *
  * Return: none
  */
-int main(int argc UNUSED, char **argv UNUSED, char **env UNUSED)
+int main(int argc UNUSED, char **argv UNUSED)
 {
 	char *line;
 	char **args;
