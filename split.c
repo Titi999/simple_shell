@@ -1,16 +1,17 @@
 #include "main.h"
 
 /**
+ * split - splits a string into specified substrings
+ * @line: original string
  *
- *
- *
+ * Return:pointer to pointer to substrings
  *
  */
 
 char **split(char *line)
 {
 	int bufsize = 64, index = 0;
-	char **tokens = malloc(bufsize * sizeof(char*));
+	char **tokens = malloc(bufsize * sizeof(char *));
 	char *token, **tokens_backup;
 
 	if (!tokens)
@@ -19,17 +20,17 @@ char **split(char *line)
 		exit(EXIT_FAILURE);
 	}
 
-	 no_nl(line);
-	 token = strtok(line, " ");
-	 while (token != NULL)
-	 {
+	no_nl(line);
+	token = strtok(line, " ");
+	while (token != NULL)
+	{
 		tokens[index] = token;
 		index++;
 		if (index >= bufsize)
 		{
 			bufsize += 64;
 			tokens_backup = tokens;
-			tokens = realloc(tokens, bufsize * sizeof(char*));
+			tokens = realloc(tokens, bufsize * sizeof(char *));
 			if (!tokens)
 			{
 				free(tokens_backup);
@@ -39,8 +40,8 @@ char **split(char *line)
 			}
 		}
 		token = strtok(NULL, " ");
-	 }
-	 tokens[index] = NULL;
-	 return tokens;
+	}
+	tokens[index] = NULL;
+	return (tokens);
 }
 

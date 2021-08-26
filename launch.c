@@ -1,4 +1,10 @@
 #include "main.h"
+/**
+ * launch - executes a program
+ * @args: pointer to command strings
+ *
+ * Return: 1 on success
+ */
 int launch(char **args)
 {
 	pid_t pid;
@@ -8,7 +14,7 @@ int launch(char **args)
 	if (pid == 0)
 	{
 		/*Child process*/
-		if (execve(args[0], args , environ) == -1)
+		if (execve(args[0], args, environ) == -1)
 		{
 			perror("lsh");
 		}
@@ -24,6 +30,6 @@ int launch(char **args)
 		/*parent process*/
 		wait(NULL);
 	}
-	return 1;
+	return (1);
 }
 
