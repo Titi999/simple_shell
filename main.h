@@ -43,6 +43,7 @@ char *_strcpy(char *dest, char *src);
 char *_strdup(char *str);
 char *_strcat(char *dest, char *src);
 char *_strstr(char *x, char *y);
+int _print(char *src);
 
 /* path */
 char *find_path();
