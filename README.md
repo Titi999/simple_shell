@@ -1,8 +1,4 @@
-align="center">
-<#SIMPLE SHELL#>
-</p>
-
-## Simple Shell
+## SIMPLE SHELL
 
 ### Synopsis
 
