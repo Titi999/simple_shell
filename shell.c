@@ -18,7 +18,7 @@ int main(int argc UNUSED, char **argv UNUSED)
 	while (1)
 	{
 		if (term)
-			_print("> ");
+			write(STDOUT_FILENO, "> ", 2);
 		line = read_line();
 		args = split(line);
 		execute(args);
