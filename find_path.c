@@ -113,7 +113,6 @@ char **getenvpath()
 	size_args = count(tmp);
 	env_args = parsing(tmp, size_args);
 	free(tmp);
-	tmp =  NULL;
 	return (env_args);
 }
 

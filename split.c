@@ -16,7 +16,7 @@ char **split(char *line)
 
 	if (!tokens)
 	{
-		fprintf(stderr, "lsh: allocation error\n");
+		_print("hsh: allocation error\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -34,14 +34,14 @@ char **split(char *line)
 			if (!tokens)
 			{
 				free(tokens_backup);
-				fprintf(stderr, "lsh: allocation error\n");
-
+				_print("hsh: allocation error\n");
 				exit(EXIT_FAILURE);
 			}
 		}
 		token = strtok(NULL, " ");
 	}
 	tokens[index] = NULL;
+	free(token), free(tokens_backup);
 	return (tokens);
 }
 

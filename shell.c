@@ -22,6 +22,7 @@ int main(int argc UNUSED, char **argv UNUSED)
 		line = read_line();
 		args = split(line);
 		execute(args);
+		fflush(stdin);
 	}
 	free(line);
 	free(args);
