@@ -1,4 +1,4 @@
-lign="center">
+align="center">
 <#SIMPLE SHELL#>
 </p>
 
@@ -18,13 +18,10 @@ program runs based on bash commands obtained from the input stream by the user.
 Any text seperated by a single space is considered to be an argument. The
 respective command typed by the user is then executed as if in a UNIX shell.
 
-To learn more about how the Shell works, here is our published article on The Startup via Medium:
-[The Command Line with ls -l](https://medium.com/swlh/the-command-line-with-ls-l-6efaf01cc4c0?)
-
 ### Requirements
 
 * Allowed editors: vi, vim, or emacs
-* All files were compiled on Ubuntu 14.04 LTS
+* All files were compiled on Ubuntu 20.08 LTS
 * Programs and functions were compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
 * All files should end with a new line
 * Code should use the Betty style. It is checked using betty-style.pl and betty-doc.pl
@@ -63,12 +60,12 @@ The shell works like this in interactive mode:
 
 ```bash
 $ ./hsh
-##---> /bin/ls
+> /bin/ls
 hsh shell.c path.c README.md
 ```
 
 ```bash
-##---> ls -l
+> ls -l
 -rwxrwxr-x 1 vagrant vagrant 14136 Nov 24 21:42 hsh
 -rw-rw-r-- 1 vagrant vagrant   863 Nov 24 21:42 shell.c
 -rw-rw-r-- 1 vagrant vagrant   784 Nov 24 01:02 path.c
@@ -76,12 +73,12 @@ hsh shell.c path.c README.md
 ```
 
 ```bash
-##---> pwd
+> pwd
 /home/vagrant/simple_shell
 ```
 
 ```bash
-##---> exit
+> exit
 $
 ```
 
