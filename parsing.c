@@ -23,7 +23,6 @@ int count(char *buffer)
 		}
 		i++;
 	}
-	free(delimiter);
 	return (pearls + 1);
 }
 
@@ -58,7 +57,6 @@ char **parsing(char *buffer, int characters)
 		counter++;
 	}
 	token_necklace[counter] = NULL;
-	free(token), free(delimiter);
 	return (token_necklace);
 }
 

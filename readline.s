@@ -17,7 +17,7 @@ char *read_line(void)
 		}
 		else
 		{
-			perror("lsh: getline\n");
+			perror("hsh: getline\n");
 			exit(EXIT_FAILURE);
 		}
 	}

@@ -41,7 +41,6 @@ char **split(char *line)
 		token = strtok(NULL, " ");
 	}
 	tokens[index] = NULL;
-	free(token), free(tokens_backup);
 	return (tokens);
 }
 

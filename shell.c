@@ -10,21 +10,33 @@
  */
 int main(int argc UNUSED, char **argv UNUSED)
 {
-	char *line;
-	char **args;
+	char *line = NULL;	 
+	char **args = NULL;
 	int term;
+	size_t len = 0;
+
 
 	term = isatty(STDIN_FILENO);
 	while (1)
 	{
 		if (term)
 			write(STDOUT_FILENO, "> ", 2);
-		line = read_line();
+		if (getline(&line, &len, stdin) == -1)
+		{
+			free(line);
+			if (term)
+			{		
+				_print("\n");
+				exit(70);
+			}
+			exit(0);
+		}
+		/*
+		*line = read_line();
+		*/
 		args = split(line);
 		execute(args);
-		fflush(stdin);
 	}
-	free(line);
 	free(args);
 	return (0);
 }
