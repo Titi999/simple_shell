@@ -12,7 +12,7 @@ char **split(char *line)
 {
 	int bufsize = 64, index = 0;
 	char **tokens = malloc(bufsize * sizeof(char *));
-	char *token, **tokens_backup;
+	char *token = NULL, **tokens_backup = NULL;
 
 	if (!tokens)
 	{
