@@ -33,7 +33,6 @@ char **split(char *line)
 			tokens = realloc(tokens, bufsize * sizeof(char *));
 			if (!tokens)
 			{
-				free(tokens_backup);
 				_print("hsh: allocation error\n");
 				exit(EXIT_FAILURE);
 			}

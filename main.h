@@ -33,7 +33,7 @@ int launch(char **args);
 int env_func(void);
 int exit_func(void);
 int count(char *buffer);
-char **parsing(char *buffer, int characters);
+char **parsing(char *buffer, int characters, char *delimiter);
 
 /* strings*/
 int _strlen(char *s);

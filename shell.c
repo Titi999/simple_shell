@@ -12,7 +12,9 @@ int main(int argc UNUSED, char **argv UNUSED)
 {
 	char *line = NULL;	 
 	char **args = NULL;
-	int term;
+	char *delim = " ";
+	int term = 0;
+	int length = 0;
 	size_t len = 0;
 
 
@@ -23,7 +25,6 @@ int main(int argc UNUSED, char **argv UNUSED)
 			write(STDOUT_FILENO, "> ", 2);
 		if (getline(&line, &len, stdin) == -1)
 		{
-			free(line);
 			if (term)
 			{		
 				_print("\n");
@@ -31,12 +32,12 @@ int main(int argc UNUSED, char **argv UNUSED)
 			}
 			exit(0);
 		}
-		/*
-		*line = read_line();
-		*/
-		args = split(line);
+		no_nl(line);
+		length = count(line);
+		args= parsing(line, length, delim);
 		execute(args);
 	}
+	free(line);
 	free(args);
 	return (0);
 }

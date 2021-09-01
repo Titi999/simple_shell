@@ -30,21 +30,21 @@ int count(char *buffer)
  * parsing - Function that splits a given string
  * @buffer: Given string
  * @characters: number of elements
+ * @delim: delimiters
  * Return: Tokenized string
  */
 
-char **parsing(char *buffer, int characters)
+char **parsing(char *buffer, int characters, char *delim)
 {
 	int counter = 0;
 	char *token = NULL;
-	char *delimiter = " :'\n''\t'";
 	char **token_necklace = malloc(sizeof(char *) * characters);
 
 	if (token_necklace == NULL)
 	{
 		return (NULL);
 	}
-	token = strtok(buffer, delimiter);
+	token = strtok(buffer, delim);
 	while (token != NULL)
 	{
 		token_necklace[counter] = _strdup(token);
@@ -53,7 +53,7 @@ char **parsing(char *buffer, int characters)
 			free(token_necklace);
 			return (NULL);
 		}
-		token = strtok(NULL, delimiter);
+		token = strtok(NULL, delim);
 		counter++;
 	}
 	token_necklace[counter] = NULL;

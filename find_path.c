@@ -106,12 +106,13 @@ char **getenvpath()
 {
 	char *tmp = NULL;
 	int size_args = 0;
-	char **env_args;
+	char *delim = " :'\n''\t'";
+	char **env_args = NULL;
 
 	tmp = find_path();
 	change_equal_sig(tmp); /*Change  PATH= for PATH:*/
 	size_args = count(tmp);
-	env_args = parsing(tmp, size_args);
+	env_args = parsing(tmp, size_args, delim);
 	free(tmp);
 	return (env_args);
 }
