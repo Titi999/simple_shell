@@ -10,13 +10,12 @@
  */
 int main(int argc UNUSED, char **argv UNUSED)
 {
-	char *line = NULL;	 
+	char *line = NULL;
 	char **args = NULL;
 	char *delim = " ";
 	int term = 0;
 	int length = 0;
 	size_t len = 0;
-
 
 	term = isatty(STDIN_FILENO);
 	while (1)
@@ -32,8 +31,8 @@ int main(int argc UNUSED, char **argv UNUSED)
 			}
 			exit(0);
 		}
-		no_nl(line);
 		length = count(line);
+		no_nl(line);
 		args= parsing(line, length, delim);
 		execute(args);
 	}
