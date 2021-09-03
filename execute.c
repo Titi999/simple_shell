@@ -33,6 +33,7 @@ int execute(char **args)
 	paths = getenvpath();
 	fullcommand = _insert_path(args, paths);
 	args[0] = fullcommand;
+	free(paths);
 	return (launch(args));
 }
 
