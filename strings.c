@@ -94,7 +94,7 @@ char *_strdup(char *str)
 	l = 0;
 	for (i = 0; str[i] != '\0'; i++)
 		l++;
-	dup = malloc(sizeof(char) * l + 1);
+	dup = malloc(sizeof(char) * (l + 1));
 	if (dup == NULL)
 		return (NULL);
 	for (i = 0; i < l ; i++)
