@@ -37,7 +37,7 @@ int main(int argc UNUSED, char **argv UNUSED)
 		execute(args);
 	}
 	free(line);
-	free(args);
+	_free(2, args);
 	return (0);
 }
 

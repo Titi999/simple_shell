@@ -16,7 +16,7 @@ int launch(char **args)
 		/*Child process*/
 		if (execve(args[0], args, environ) == -1)
 		{
-			free(args);
+			_free(2, args);
 			perror("hsh");
 		}
 		exit(EXIT_FAILURE);

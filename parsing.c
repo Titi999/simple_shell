@@ -12,7 +12,7 @@ int count(char *buffer)
 	{
 		i++;
 	}
-	return (i++);
+	return (++i);
 }
 
 /**
@@ -39,7 +39,7 @@ char **parsing(char *buffer, int characters, char *delim)
 		token_necklace[counter] = _strdup(token);
 		if (token_necklace[counter] == NULL)
 		{
-			free(token_necklace);
+			_free(2, token_necklace);
 			return (NULL);
 		}
 		token = strtok(NULL, delim);

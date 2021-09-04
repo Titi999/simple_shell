@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdarg.h>
+#include <errno.h>
 #include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
@@ -50,4 +52,7 @@ char *find_path();
 void change_equal_sig(char *str);
 char *_insert_path(char **args, char **path);
 char **getenvpath();
+
+/* freeing */
+void _free(int n, ...);
 #endif

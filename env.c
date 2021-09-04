@@ -9,7 +9,7 @@ int env_func(void)
 
 	while (environ[counter] != NULL)
 	{
-		length = strlen(environ[counter]);
+		length = _strlen(environ[counter]);
 		write(STDOUT_FILENO, environ[counter], length);
 		write(STDOUT_FILENO, "\n", 1);
 		counter++;

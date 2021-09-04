@@ -10,7 +10,7 @@ int execute(char **args)
 	int i;
 	int size = 0;
 	char **paths = NULL;
-	char *fullcommand = NULL;
+
 	builtin_struct my_builtins[] = {
 		{"exit", exit_func},
 		{"env", env_func}
@@ -31,9 +31,13 @@ int execute(char **args)
 		}
 	}
 	paths = getenvpath();
-	fullcommand = _insert_path(args, paths);
-	args[0] = fullcommand;
-	free(paths);
+	if (paths == NULL)
+	{
+		_free(2, paths);
+		paths = NULL;
+	}
+	args[0] = _insert_path(args, paths);
+	_free(2, paths);
 	return (launch(args));
 }
 

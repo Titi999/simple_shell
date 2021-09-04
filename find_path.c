@@ -93,8 +93,8 @@ char *_insert_path(char **args, char **path)
 
 		return (dirpath);
 	}
-	dirpath = tmp2, free(cwd), cwd = NULL;
-	return (dirpath);
+	free(cwd), cwd = NULL;
+	return (tmp2);
 }
 
 /**
@@ -113,6 +113,11 @@ char **getenvpath()
 	change_equal_sig(tmp); /*Change  PATH= for PATH:*/
 	size_args = count(tmp);
 	env_args = parsing(tmp, size_args, delim);
+	if (env_args ==  NULL)
+	{
+		_free(2, env_args);
+		env_args = NULL;
+	}
 	free(tmp);
 	return (env_args);
 }
